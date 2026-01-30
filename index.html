@@ -28,9 +28,11 @@
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* 改为顶部对齐，允许向下滚动 */
             margin: 0;
+            padding: 0;
             overflow-x: hidden; /* 防止横向滚动 */
+            overflow-y: auto; /* 允许垂直滚动 */
             position: relative;
         }
 
@@ -62,9 +64,9 @@
         .card-container {
             width: 90%;
             max-width: 480px;
-            /* 适配移动端高度，允许内容滚动但容器有最大高度 */
-            max-height: 90vh; 
-            overflow-y: auto;
+            /* 移动端适配：允许自然高度，页面可滚动 */
+            max-height: none;
+            overflow-y: visible;
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
@@ -74,6 +76,7 @@
             box-shadow: var(--shadow-soft);
             transition: all 0.5s ease;
             position: relative;
+            margin: 20px auto;
         }
 
         h1, h2, h3, h4 {
@@ -110,7 +113,7 @@
         }
 
         .btn-start { text-align: center; border-radius: 50px; background: transparent;}
-        .btn-restart { text-align: center; border-radius: 50px; margin-top: 20px;}
+        .btn-restart { text-align: center; border-radius: 50px; margin-top: 20px; margin-bottom: 20px;}
         .btn-back { text-align: center; border-radius: 50px; background: transparent;}
         .btn-save { text-align: center; border-radius: 50px; margin-top: 12px;}
 
@@ -346,7 +349,7 @@
         </div>
 
         <!-- 3. 结果页 -->
-        <div id="result-view" class="hidden text-center pb-8">
+        <div id="result-view" class="hidden text-center pb-16">
             <div class="title-en text-sm">Analysis Report</div>
             
             <!-- 分数展示 -->
