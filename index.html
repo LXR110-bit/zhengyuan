@@ -449,44 +449,44 @@
 
     <script>
         // 定义题目类别：soul(灵魂), safe(安全), real(现实), grow(滋养)
-        const questions = [
+                const questions = [
             // --- 灵魂共鸣 ---
-            { category: 'soul', text: "在两人沉默不语的时刻，你的身体和情绪感受到的是？", options: [{ text: "像独自一人般自在，充满安全感的宁静", weight: 5 }, { text: "偶尔会想找点话题，担心冷场的尴尬", weight: 3 }, { text: "感到压抑或焦虑，必须用手机缓解", weight: 1 }] },
-            { category: 'soul', text: "你的直觉（第六感）对于这段关系的判断是？", options: [{ text: "一种深层的笃定感，觉得“就是他了”", weight: 5 }, { text: "时好时坏，内心总有隐隐的不安", weight: 3 }, { text: "理智告诉我他条件不错，但身体抗拒", weight: 1 }] },
-            { category: 'soul', text: "如果抛开外在条件（金钱、地位、外貌），你还会选择灵魂深处的他吗？", options: [{ text: "毫无疑问，我爱的是他这个生命本身", weight: 5 }, { text: "可能会犹豫，现实条件也很重要", weight: 3 }, { text: "大概不会，条件是吸引我的主要原因", weight: 1 }] },
-            { category: 'soul', text: "想到要和他共度余生，你第一反应的情绪是？", options: [{ text: "期待与踏实", weight: 5 }, { text: "迷茫与不确定", weight: 3 }, { text: "恐惧与束缚", weight: 1 }] },
-            { category: 'soul', text: "你们是否拥有只属于两个人的“独特语言”或梗？", options: [{ text: "有很多，眼神一对视就懂彼此笑点", weight: 5 }, { text: "有一些，但不多", weight: 3 }, { text: "几乎没有，聊天很干涩", weight: 1 }] },
-            { category: 'soul', text: "每晚临睡前（或结束对话前），最后的感觉通常是？", options: [{ text: "温暖安稳，带着爱意入睡", weight: 5 }, { text: "平淡无奇，只是说了晚安", weight: 3 }, { text: "经常带着未解决的怨气或冷漠入睡", weight: 1 }] },
-            { category: 'soul', text: "当你分享微不足道的快乐（如路边的小花）时，他的反应？", options: [{ text: "即使没兴趣，也会认真回应你的开心", weight: 5 }, { text: "敷衍地点点头或简单回个表情包", weight: 3 }, { text: "觉得我很幼稚，或者直接无视", weight: 1 }] },
+            { category: 'soul', text: "在两人沉默不语的时刻，你的身体和情绪感受到的是？", options: [{ text: "像独自一人般自在，充满安全感的宁静", weight: 5 }, { text: "大多时候舒适，偶尔会有一点点不自然", weight: 4 }, { text: "偶尔会想找点话题，担心冷场的尴尬", weight: 3 }, { text: "经常感到有些别扭，需要找点事做", weight: 2 }, { text: "感到压抑或焦虑，必须用手机缓解", weight: 1 }] },
+            { category: 'soul', text: "你的直觉（第六感）对于这段关系的判断是？", options: [{ text: "一种深层的笃定感，觉得"就是他了"", weight: 5 }, { text: "大部分时候很确定，偶尔有小困惑", weight: 4 }, { text: "时好时坏，内心总有隐隐的不安", weight: 3 }, { text: "经常怀疑，但又舍不得放弃", weight: 2 }, { text: "理智告诉我他条件不错，但身体抗拒", weight: 1 }] },
+            { category: 'soul', text: "如果抛开外在条件（金钱、地位、外貌），你还会选择灵魂深处的他吗？", options: [{ text: "毫无疑问，我爱的是他这个生命本身", weight: 5 }, { text: "应该会，条件只是加分项", weight: 4 }, { text: "可能会犹豫，现实条件也很重要", weight: 3 }, { text: "不太确定，需要好好想想", weight: 2 }, { text: "大概不会，条件是吸引我的主要原因", weight: 1 }] },
+            { category: 'soul', text: "想到要和他共度余生，你第一反应的情绪是？", options: [{ text: "期待与踏实", weight: 5 }, { text: "温暖但带着一丝紧张", weight: 4 }, { text: "迷茫与不确定", weight: 3 }, { text: "有压力，觉得还没准备好", weight: 2 }, { text: "恐惧与束缚", weight: 1 }] },
+            { category: 'soul', text: "你们是否拥有只属于两个人的"独特语言"或梗？", options: [{ text: "有很多，眼神一对视就懂彼此笑点", weight: 5 }, { text: "有不少，相处起来很有默契", weight: 4 }, { text: "有一些，但不多", weight: 3 }, { text: "很少，大多是普通的聊天", weight: 2 }, { text: "几乎没有，聊天很干涩", weight: 1 }] },
+            { category: 'soul', text: "每晚临睡前（或结束对话前），最后的感觉通常是？", options: [{ text: "温暖安稳，带着爱意入睡", weight: 5 }, { text: "心情不错，期待明天", weight: 4 }, { text: "平淡无奇，只是说了晚安", weight: 3 }, { text: "有时会带着小情绪入睡", weight: 2 }, { text: "经常带着未解决的怨气或冷漠入睡", weight: 1 }] },
+            { category: 'soul', text: "当你分享微不足道的快乐（如路边的小花）时，他的反应？", options: [{ text: "即使没兴趣，也会认真回应你的开心", weight: 5 }, { text: "会配合你的情绪，给予正面回应", weight: 4 }, { text: "敷衍地点点头或简单回个表情包", weight: 3 }, { text: "反应冷淡，让你有点扫兴", weight: 2 }, { text: "觉得我很幼稚，或者直接无视", weight: 1 }] },
 
             // --- 情绪安全 ---
-            { category: 'safe', text: "当你向对方展露脆弱（如失败、哭泣、恐惧）时，他的反应通常是？", options: [{ text: "温柔承接，不急于评判或解决，只是陪伴", weight: 5 }, { text: "虽然笨拙，但试图通过讲道理来安慰我", weight: 3 }, { text: "显得不耐烦，或者让我觉得自己太敏感", weight: 1 }] },
-            { category: 'safe', text: "在这段关系中，你觉得自己是否需要“伪装”？", options: [{ text: "完全不需要，他见过我最糟糕的一面并依然爱我", weight: 5 }, { text: "偶尔需要收敛一些小脾气来维持和谐", weight: 3 }, { text: "经常需要小心翼翼，生怕说错话", weight: 1 }] },
-            { category: 'safe', text: "当发生冲突争执后，你们的修复机制是怎样的？", options: [{ text: "坦诚沟通，每次吵架都让我们更了解彼此", weight: 5 }, { text: "一方先低头，事情翻篇但问题没彻底解决", weight: 3 }, { text: "冷战，互相伤害，直到精疲力竭", weight: 1 }] },
-            { category: 'safe', text: "关于个人空间和边界感，他的做法通常是？", options: [{ text: "极其尊重，理解我有时需要独处", weight: 5 }, { text: "偶尔会过度依赖，粘人到没有空间", weight: 3 }, { text: "经常翻看手机，试图掌控我的行踪", weight: 1 }] },
-            { category: 'safe', text: "面对其他异性的示好，他的处理方式让你感觉？", options: [{ text: "非常有安全感，界限清晰不暧昧", weight: 5 }, { text: "偶尔让我吃醋，但解释后能接受", weight: 3 }, { text: "经常边界模糊，让我患得患失", weight: 1 }] },
-            { category: 'safe', text: "谈及前任或过往感情经历时，他的态度是？", options: [{ text: "客观释然，已彻底翻篇，无恨无爱", weight: 5 }, { text: "偶尔还会流露出怀念或遗憾", weight: 3 }, { text: "充满怨恨地贬低前任，或闭口不谈", weight: 1 }] },
-            { category: 'safe', text: "当你在生活小事上（如做家务、迟到）犯错时，他的第一反应？", options: [{ text: "幽默化解或一起补救，不指责", weight: 5 }, { text: "会碎碎念，但最终还是会帮忙", weight: 3 }, { text: "严厉指责，甚至上升到人身攻击", weight: 1 }] },
-            { category: 'safe', text: "当你生病或遭遇突发困境时，他的表现？", options: [{ text: "即使再忙也会优先照顾我的感受和身体", weight: 5 }, { text: "会口头关心，但行动力一般", weight: 3 }, { text: "觉得我矫情，甚至因为我生病而生气", weight: 1 }] },
-            { category: 'safe', text: "他是否会拿你和别人的伴侣（或前任）做比较？", options: [{ text: "从未有过，在他眼里我是独一无二的", weight: 5 }, { text: "偶尔开玩笑提过，但没有恶意", weight: 3 }, { text: "经常比较，总觉得我不够好", weight: 1 }] },
-            { category: 'safe', text: "在这个人面前，你是否能坦然接受自己的不完美（如身材焦虑）？", options: [{ text: "能，他让我觉得这些瑕疵也很可爱", weight: 5 }, { text: "偶尔还是会遮掩，怕他嫌弃", weight: 3 }, { text: "不能，他经常挑剔我的外表", weight: 1 }] },
-            { category: 'safe', text: "如果你们需要短暂异地或分开一段时间，你会？", options: [{ text: "完全信任，相信感情不会变淡", weight: 5 }, { text: "会有些焦虑，需要频繁查岗", weight: 3 }, { text: "可能会直接导致分手", weight: 1 }] },
-            { category: 'safe', text: "当你有不同意见时，他是否愿意倾听并思考？", options: [{ text: "会认真听完，即使不同意也会尊重", weight: 5 }, { text: "表面在听，其实在想怎么反驳", weight: 3 }, { text: "直接打断，认为我是错的", weight: 1 }] },
+            { category: 'safe', text: "当你向对方展露脆弱（如失败、哭泣、恐惧）时，他的反应通常是？", options: [{ text: "温柔承接，不急于评判或解决，只是陪伴", weight: 5 }, { text: "会安慰我，虽然方式不完美但能感受到关心", weight: 4 }, { text: "虽然笨拙，但试图通过讲道理来安慰我", weight: 3 }, { text: "有时会显得手足无措或逃避", weight: 2 }, { text: "显得不耐烦，或者让我觉得自己太敏感", weight: 1 }] },
+            { category: 'safe', text: "在这段关系中，你觉得自己是否需要"伪装"？", options: [{ text: "完全不需要，他见过我最糟糕的一面并依然爱我", weight: 5 }, { text: "基本不需要，大部分时候很放松", weight: 4 }, { text: "偶尔需要收敛一些小脾气来维持和谐", weight: 3 }, { text: "经常需要注意自己的言行举止", weight: 2 }, { text: "经常需要小心翼翼，生怕说错话", weight: 1 }] },
+            { category: 'safe', text: "当发生冲突争执后，你们的修复机制是怎样的？", options: [{ text: "坦诚沟通，每次吵架都让我们更了解彼此", weight: 5 }, { text: "能够冷静下来好好谈，虽然需要时间", weight: 4 }, { text: "一方先低头，事情翻篇但问题没彻底解决", weight: 3 }, { text: "经常僵持很久，修复过程很痛苦", weight: 2 }, { text: "冷战，互相伤害，直到精疲力竭", weight: 1 }] },
+            { category: 'safe', text: "关于个人空间和边界感，他的做法通常是？", options: [{ text: "极其尊重，理解我有时需要独处", weight: 5 }, { text: "大体尊重，偶尔会有些粘人", weight: 4 }, { text: "偶尔会过度依赖，粘人到没有空间", weight: 3 }, { text: "比较缺乏边界感，让我感到窒息", weight: 2 }, { text: "经常翻看手机，试图掌控我的行踪", weight: 1 }] },
+            { category: 'safe', text: "面对其他异性的示好，他的处理方式让你感觉？", options: [{ text: "非常有安全感，界限清晰不暧昧", weight: 5 }, { text: "基本放心，会主动告诉我情况", weight: 4 }, { text: "偶尔让我吃醋，但解释后能接受", weight: 3 }, { text: "有时候处理得不够果断，让我担心", weight: 2 }, { text: "经常边界模糊，让我患得患失", weight: 1 }] },
+            { category: 'safe', text: "谈及前任或过往感情经历时，他的态度是？", options: [{ text: "客观释然，已彻底翻篇，无恨无爱", weight: 5 }, { text: "能够平静谈论，没有太多情绪波动", weight: 4 }, { text: "偶尔还会流露出怀念或遗憾", weight: 3 }, { text: "提起时情绪明显，让我有些不安", weight: 2 }, { text: "充满怨恨地贬低前任，或闭口不谈", weight: 1 }] },
+            { category: 'safe', text: "当你在生活小事上（如做家务、迟到）犯错时，他的第一反应？", options: [{ text: "幽默化解或一起补救，不指责", weight: 5 }, { text: "表示理解，帮忙想办法解决", weight: 4 }, { text: "会碎碎念，但最终还是会帮忙", weight: 3 }, { text: "会不高兴，需要我道歉才能缓和", weight: 2 }, { text: "严厉指责，甚至上升到人身攻击", weight: 1 }] },
+            { category: 'safe', text: "当你生病或遭遇突发困境时，他的表现？", options: [{ text: "即使再忙也会优先照顾我的感受和身体", weight: 5 }, { text: "会尽量抽时间陪伴，能感受到关心", weight: 4 }, { text: "会口头关心，但行动力一般", weight: 3 }, { text: "关心程度有限，让我有些失望", weight: 2 }, { text: "觉得我矫情，甚至因为我生病而生气", weight: 1 }] },
+            { category: 'safe', text: "他是否会拿你和别人的伴侣（或前任）做比较？", options: [{ text: "从未有过，在他眼里我是独一无二的", weight: 5 }, { text: "极少，而且是正面的比较", weight: 4 }, { text: "偶尔开玩笑提过，但没有恶意", weight: 3 }, { text: "有时会比较，让我有点不舒服", weight: 2 }, { text: "经常比较，总觉得我不够好", weight: 1 }] },
+            { category: 'safe', text: "在这个人面前，你是否能坦然接受自己的不完美（如身材焦虑）？", options: [{ text: "能，他让我觉得这些瑕疵也很可爱", weight: 5 }, { text: "大部分时候可以，他给我安全感", weight: 4 }, { text: "偶尔还是会遮掩，怕他嫌弃", weight: 3 }, { text: "经常会在意，担心他的看法", weight: 2 }, { text: "不能，他经常挑剔我的外表", weight: 1 }] },
+            { category: 'safe', text: "如果你们需要短暂异地或分开一段时间，你会？", options: [{ text: "完全信任，相信感情不会变淡", weight: 5 }, { text: "基本放心，会保持适度联系", weight: 4 }, { text: "会有些焦虑，需要频繁查岗", weight: 3 }, { text: "很担心，感觉关系会受到考验", weight: 2 }, { text: "可能会直接导致分手", weight: 1 }] },
+            { category: 'safe', text: "当你有不同意见时，他是否愿意倾听并思考？", options: [{ text: "会认真听完，即使不同意也会尊重", weight: 5 }, { text: "愿意听，有时能被说服改变想法", weight: 4 }, { text: "表面在听，其实在想怎么反驳", weight: 3 }, { text: "不太愿意听，坚持自己的观点", weight: 2 }, { text: "直接打断，认为我是错的", weight: 1 }] },
 
             // --- 现实契合 ---
-            { category: 'real', text: "关于未来的图景（如生活方式、价值观、金钱观），你们的默契度是？", options: [{ text: "大方向惊人的一致，细节互补", weight: 5 }, { text: "存在分歧，但愿意为了对方妥协磨合", weight: 3 }, { text: "根本无法谈论未来，一谈就崩", weight: 1 }] },
-            { category: 'real', text: "在社交场合（朋友聚会或发朋友圈），他的态度是？", options: [{ text: "大方自然地公开我们的关系，以我为荣", weight: 5 }, { text: "虽然不掩饰，但也不太主动提及", weight: 3 }, { text: "刻意隐瞒，对外表现得像单身", weight: 1 }] },
-            { category: 'real', text: "关于金钱消费，涉及到大额支出时？", options: [{ text: "我们会自然地商量，尊重彼此的意见", weight: 5 }, { text: "通常是他决定，我跟随", weight: 3 }, { text: "各花各的，在这个话题上很防备", weight: 1 }] },
-            { category: 'real', text: "观察他对待服务员、快递员或弱势群体的态度？", options: [{ text: "温和有礼，体现出良好的教养", weight: 5 }, { text: "无感，不好也不坏", weight: 3 }, { text: "颐指气使，傲慢无礼", weight: 1 }] },
-            { category: 'real', text: "他许下的承诺（哪怕是答应洗碗这种小事），兑现率如何？", options: [{ text: "言出必行，让人很放心", weight: 5 }, { text: "大事情靠谱，小事情经常忘", weight: 3 }, { text: "经常画大饼，说了不做", weight: 1 }] },
-            { category: 'real', text: "对于“付出”这件事，他的心态倾向于？", options: [{ text: "乐在其中，不计较谁付出的更多", weight: 5 }, { text: "比较讲究公平，希望有来有回", weight: 3 }, { text: "总是强调他付出了多少，让我有负罪感", weight: 1 }] },
-            { category: 'real', text: "观察他与父母的互动模式，是否让你感到舒适？", options: [{ text: "关系健康，既独立又尊重长辈", weight: 5 }, { text: "过于依赖父母（妈宝）或过于疏离", weight: 3 }, { text: "家庭关系混乱，充满控制或暴力", weight: 1 }] },
+            { category: 'real', text: "关于未来的图景（如生活方式、价值观、金钱观），你们的默契度是？", options: [{ text: "大方向惊人的一致，细节互补", weight: 5 }, { text: "主要方面一致，小分歧可以协商", weight: 4 }, { text: "存在分歧，但愿意为了对方妥协磨合", weight: 3 }, { text: "分歧较多，经常因此产生矛盾", weight: 2 }, { text: "根本无法谈论未来，一谈就崩", weight: 1 }] },
+            { category: 'real', text: "在社交场合（朋友聚会或发朋友圈），他的态度是？", options: [{ text: "大方自然地公开我们的关系，以我为荣", weight: 5 }, { text: "愿意公开，会自然地介绍我", weight: 4 }, { text: "虽然不掩饰，但也不太主动提及", weight: 3 }, { text: "比较低调，很少在社交场合提到我", weight: 2 }, { text: "刻意隐瞒，对外表现得像单身", weight: 1 }] },
+            { category: 'real', text: "关于金钱消费，涉及到大额支出时？", options: [{ text: "我们会自然地商量，尊重彼此的意见", weight: 5 }, { text: "大多会一起讨论，偶尔各自决定", weight: 4 }, { text: "通常是他决定，我跟随", weight: 3 }, { text: "沟通不太顺畅，容易有分歧", weight: 2 }, { text: "各花各的，在这个话题上很防备", weight: 1 }] },
+            { category: 'real', text: "观察他对待服务员、快递员或弱势群体的态度？", options: [{ text: "温和有礼，体现出良好的教养", weight: 5 }, { text: "比较友善，基本礼貌周到", weight: 4 }, { text: "无感，不好也不坏", weight: 3 }, { text: "有时会显得不耐烦或冷淡", weight: 2 }, { text: "颐指气使，傲慢无礼", weight: 1 }] },
+            { category: 'real', text: "他许下的承诺（哪怕是答应洗碗这种小事），兑现率如何？", options: [{ text: "言出必行，让人很放心", weight: 5 }, { text: "大部分能做到，偶尔会忘记", weight: 4 }, { text: "大事情靠谱，小事情经常忘", weight: 3 }, { text: "需要反复提醒才会去做", weight: 2 }, { text: "经常画大饼，说了不做", weight: 1 }] },
+            { category: 'real', text: "对于"付出"这件事，他的心态倾向于？", options: [{ text: "乐在其中，不计较谁付出的更多", weight: 5 }, { text: "愿意付出，偶尔会提一下", weight: 4 }, { text: "比较讲究公平，希望有来有回", weight: 3 }, { text: "会计较付出，让我感到压力", weight: 2 }, { text: "总是强调他付出了多少，让我有负罪感", weight: 1 }] },
+            { category: 'real', text: "观察他与父母的互动模式，是否让你感到舒适？", options: [{ text: "关系健康，既独立又尊重长辈", weight: 5 }, { text: "整体不错，有小问题但可以接受", weight: 4 }, { text: "过于依赖父母（妈宝）或过于疏离", weight: 3 }, { text: "家庭关系有些复杂，让我有顾虑", weight: 2 }, { text: "家庭关系混乱，充满控制或暴力", weight: 1 }] },
 
             // --- 相互滋养 ---
-            { category: 'grow', text: "回想你们相处后的状态，你的能量感觉如何？", options: [{ text: "感觉被充电，内心平静且更有力量", weight: 5 }, { text: "没有太大变化，和平时差不多", weight: 3 }, { text: "感到莫名的疲惫，需要独处很久来恢复", weight: 1 }] },
-            { category: 'grow', text: "他是否让你成为了更好的自己？", options: [{ text: "是的，他激发了我的潜能，让我更自信", weight: 5 }, { text: "他只是陪伴我，对我的成长影响不大", weight: 3 }, { text: "没有，我反而变得更自卑、多疑或焦虑", weight: 1 }] },
-            { category: 'grow', text: "对于你的爱好或梦想，哪怕他并不感兴趣，他会？", options: [{ text: "支持我去尝试，欣赏我专注的样子", weight: 5 }, { text: "不干涉，但也完全不关心", weight: 3 }, { text: "打击嘲讽，觉得我不切实际", weight: 1 }] },
-            { category: 'grow', text: "在身体亲密接触（牵手、拥抱）上，你们的频率和质量？", options: [{ text: "充满爱意，常常自然地肢体接触", weight: 5 }, { text: "例行公事，缺乏激情但尚可接受", weight: 3 }, { text: "一方经常拒绝，或感到抗拒排斥", weight: 1 }] },
+            { category: 'grow', text: "回想你们相处后的状态，你的能量感觉如何？", options: [{ text: "感觉被充电，内心平静且更有力量", weight: 5 }, { text: "大多时候很舒服，心情愉悦", weight: 4 }, { text: "没有太大变化，和平时差不多", weight: 3 }, { text: "有时会感到有些累", weight: 2 }, { text: "感到莫名的疲惫，需要独处很久来恢复", weight: 1 }] },
+            { category: 'grow', text: "他是否让你成为了更好的自己？", options: [{ text: "是的，他激发了我的潜能，让我更自信", weight: 5 }, { text: "有正面影响，在某些方面有成长", weight: 4 }, { text: "他只是陪伴我，对我的成长影响不大", weight: 3 }, { text: "影响有好有坏，有时会动摇自信", weight: 2 }, { text: "没有，我反而变得更自卑、多疑或焦虑", weight: 1 }] },
+            { category: 'grow', text: "对于你的爱好或梦想，哪怕他并不感兴趣，他会？", options: [{ text: "支持我去尝试，欣赏我专注的样子", weight: 5 }, { text: "表示支持，偶尔会一起参与", weight: 4 }, { text: "不干涉，但也完全不关心", weight: 3 }, { text: "不太理解，有时会泼冷水", weight: 2 }, { text: "打击嘲讽，觉得我不切实际", weight: 1 }] },
+            { category: 'grow', text: "在身体亲密接触（牵手、拥抱）上，你们的频率和质量？", options: [{ text: "充满爱意，常常自然地肢体接触", weight: 5 }, { text: "比较频繁，大多时候很温馨", weight: 4 }, { text: "例行公事，缺乏激情但尚可接受", weight: 3 }, { text: "比较少，需要主动才会有", weight: 2 }, { text: "一方经常拒绝，或感到抗拒排斥", weight: 1 }] },
         ];
 
         // 结果数据 (使用百分比阈值判定)
