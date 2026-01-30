@@ -95,7 +95,7 @@
         }
 
         /* 按钮样式 */
-        .btn-start, .btn-option, .btn-restart, .btn-back, .btn-save {
+        .btn-start, .btn-option, .btn-restart, .btn-back, .btn-next, .btn-save {
             background: rgba(255,255,255,0.8);
             border: 1px solid var(--primary-purple);
             color: var(--deep-purple);
@@ -116,9 +116,10 @@
         .btn-start { text-align: center; border-radius: 50px; background: transparent;}
         .btn-restart { text-align: center; border-radius: 50px; margin-top: 20px; margin-bottom: 20px;}
         .btn-back { text-align: center; border-radius: 50px; background: transparent;}
+        .btn-next { text-align: center; border-radius: 50px; background: var(--primary-purple); color: #fff; border-color: var(--primary-purple);}
         .btn-save { text-align: center; border-radius: 50px; margin-top: 12px;}
 
-        .btn-start:hover, .btn-option:active, .btn-restart:hover, .btn-back:hover, .btn-save:hover {
+        .btn-start:hover, .btn-option:active, .btn-restart:hover, .btn-back:hover, .btn-next:hover, .btn-save:hover {
             background: var(--primary-purple);
             color: #fff;
             transform: translateY(-1px);
@@ -345,7 +346,10 @@
                 <div id="options-container" class="flex flex-col gap-3">
                     <!-- 选项由JS生成 -->
                 </div>
-                <button id="back-button" class="btn-back mt-4" onclick="app.goBack()" disabled>返回上一题</button>
+                <div class="flex gap-3 mt-4">
+                    <button id="back-button" class="btn-back flex-1" onclick="app.goBack()" disabled>返回上一题</button>
+                    <button id="next-button" class="btn-next flex-1 hidden" onclick="app.goNext()">下一题</button>
+                </div>
             </div>
         </div>
 
@@ -572,10 +576,19 @@
                 const progress = ((this.currentQIndex + 1) / questions.length) * 100;
                 document.getElementById('progress-bar').style.width = `${progress}%`;
                 document.getElementById('q-number').innerText = this.currentQIndex + 1;
+                
+                // 返回上一题按钮
                 const backBtn = document.getElementById('back-button');
                 const isFirst = this.currentQIndex === 0;
                 backBtn.disabled = isFirst;
                 backBtn.classList.toggle('hidden', isFirst);
+                
+                // 下一题按钮 - 当已回答过当前题目时显示
+                const nextBtn = document.getElementById('next-button');
+                const hasAnswered = this.answers[this.currentQIndex] !== undefined;
+                const isLast = this.currentQIndex >= questions.length - 1;
+                nextBtn.classList.toggle('hidden', !hasAnswered || isLast);
+                
                 this.isLocked = false;
 
                 // Animation reset
@@ -792,6 +805,13 @@
             goBack: function() {
                 if (this.currentQIndex === 0) return;
                 this.currentQIndex--;
+                this.renderQuestion();
+            },
+
+            goNext: function() {
+                if (this.currentQIndex >= questions.length - 1) return;
+                if (!this.answers[this.currentQIndex]) return; // 没有答案时不能前进
+                this.currentQIndex++;
                 this.renderQuestion();
             },
 
